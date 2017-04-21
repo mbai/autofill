@@ -3,10 +3,11 @@
 
 <h1>Autofill </h1>
 
-    <form method="post" id="usrForm" action="submit.html">
+    <form method="post" id="usrForm" action="autofill.html">
         <label for="frmNameA">Name</label>
-        <input name="name" id="frmNameA" placeholder="Full name" required autocomplete="name">
-        <input type="checkbox" name="billAndShip" id="cbBillAndShip">
+        <input name="username" type="text" id="frmNameA" placeholder="Full name" required autocomplete="username">
+        <label for="frmPw">Password</label>
+        <input name="password" type="password" id="frmPw" autocomplete="password">
         <input type="submit" value="Submit">
     </form>
 
