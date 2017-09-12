@@ -1,5 +1,13 @@
 <!DOCTYPE html>
 <html>
+<style>input.out-of-document {
+    position: absolute;
+    top: 80px;
+    right: 0;
+    width: 200px;
+    height: 100px;
+    border: 3px solid #73AD21;
+}
 <body>
 <br/>
 <br/>
@@ -21,7 +29,7 @@
 <br/>
 <form onSubmit="captureForm()">
     Username: <input type='text' name='username' autocomplete='username'/><br/><br/>
-    Password: <input type='password' name='password' autocomplete='current-password'/><br/><br/>
+    Password: <input class='out-of-document' type='password' name='password' autocomplete='current-password'/><br/><br/>
     Work email: <input type='text' name='email' autocomplete='work email'/><br/><br/>
     Shipping address1: <input type='text' name='address'
                               autocomplete='section-whatever shipping address-line1'/><br/>
