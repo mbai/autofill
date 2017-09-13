@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+</head>
+<body>
+<script>
+  var iframe = document.createElement("iframe")
+  iframe.src = "data:text/html;charset=utf-8,<body>Foo<form><input type='text' name='username'><input type='password' name='password'> <input type='submit'> </form></body>"
+  document.body.appendChild(iframe);
+</script>
+</body>
+</html>
