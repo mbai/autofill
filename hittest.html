@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.out-of-document {
+    position: absolute;
+    top: 80px;
+    left: -1000px;
+    width: 200px;
+    height: 100px;
+    border: 3px solid #73AD21;
+}
+
+.absolute-position {
+    position: absolute;
+    top: 80px;
+    right: 0px;
+    width: 200px;
+    height: 100px;
+    border: 3px solid #73AD21;
+}
+.visually-hidden {
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+    clip: rect(0 0 0 0);
+    width: 2px;
+    height: 2px;
+    margin: -2px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+</style>
+</head>
+<body>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<form onSubmit="captureForm()">
+    Username: <input type='text' name='username' autocomplete='username'/><br/><br/>
+    Password: <input class='out-of-document' type='password' name='password' autocomplete='current-password'/><br/><br/>
+    Shipping address1: <input class='visually-hidden' type='text' name='address'
+                              autocomplete='section-whatever shipping address-line1'/><br/>
+    Shipping address2: <input class='absolute-position' type='text' name='address'
+                              autocomplete='shipping address-line2'/><br/>
+    Shipping address3: <input class='absolute-position' type='text' name='address'
+                              autocomplete='section-whatever address-line3'/><br/><br/>
+    <input type='submit' value='Login'/><br/>
+</form>
+<script>
+    function captureForm() {
+        alert("The form was submitted");
+    }
+
+</script>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<p>BOTTOM</p>
+</body>
+</html>
