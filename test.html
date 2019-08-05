@@ -1,34 +1,26 @@
+
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>JS Bin</title>
-<style>
-  p {
-    border: 2px solid green;
-    width: 50px;
-    height: 1000px;
-}
-.relative {
-    position: absolute;
-    background-color: green;
-    color: #fff;
-    left: 0px;
-    top: 0px;
-    width: 500px;
-    height: 900px;
-    will-change: transform;
-}
-      
-</style>
+  <title>data list</title>
 </head>
+
 <body>
-<div class="box">
-    <p>One November night in the year 1782, so the story runs, two brothers sat over their winter fire in the little French town of Annonay, watching the grey smoke-wreaths from the hearth curl up the wide chimney.</p>
-    <p class="relative">Their names were Stephen and Joseph Montgolfier, they were papermakers by trade, and were noted as possessing thoughtful minds and a deep interest in all scientific knowledge and new discovery.</p>
-    <p>Before that night—a memorable night, as it was to prove—hundreds of millions of people had watched the rising smoke-wreaths of their fires without drawing any special inspiration from the fact.”</p>
-</div>
-      
+        <div class="app">
+            <label for="ice-cream-choice">Choose a flavor:</label>
+            <input list="ice-cream-flavors" id="ice-cream-choice" name="ice-cream-choice">
+            
+            <datalist id="ice-cream-flavors">
+                <option value="Chocolate">
+                </option><option value="Coconut">
+                </option><option value="Mint">
+                </option><option value="Strawberry">
+                </option><option value="Vanilla">
+            </option></datalist>
+        </div>
+        
+</body>
 </body>
 </html>
