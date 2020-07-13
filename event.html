@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+</head>
+  
+<script>
+  
+  function myFunction(event) {
+    document.getElementById("demo").value = "Hello World" + event.type;
+    event.preventDefault();
+    event.stopPropagation();
+  }
+  </script>
+<body ontouchstart="myFunction(event)" onclick="myFunction(event)">
+<input id="demo"/><p>Click me</p>
+
+</body>
+</html>
