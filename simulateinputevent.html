@@ -7,13 +7,24 @@
 </head>
 <script>
 function myFunction() {
-  document.getElementById("button").click();
+  eventFire(document.getElementById("button"), "click");
 }
 
 function outputMessage() {
   var d = new Date();
-  document.getElementById("message").innerHTML= " Time:" +d.getTime();
+  document.getElementById("message").innerHTML= " Time ver2:" +d.getTime();
 }
+
+function eventFire(el, etype){
+  if (el.fireEvent) {
+    el.fireEvent('on' + etype);
+  } else {
+    var evObj = document.createEvent('Events');
+    evObj.initEvent(etype, true, false);
+    el.dispatchEvent(evObj);
+  }
+}
+
 </script>
 <body onload="setInterval(myFunction, 3000)">
 <input type="button" id="button" value="click by script" onclick="outputMessage()"/> 
