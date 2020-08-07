@@ -15,8 +15,8 @@ function outputMessage() {
   document.getElementById("message").innerHTML= " Time:" +d.getTime();
 }
 </script>
-<body onload="setTimeout(myFunction, 3000)">
-<input type="button" id="buttion" value="click by script" onclick="outputMessage()"/> 
+<body onload="setInterval(myFunction, 3000)">
+<input type="button" id="button" value="click by script" onclick="outputMessage()"/> 
   <p id="message"> </p>
 </body>
 </html>
