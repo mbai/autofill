@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+</head>
+<script>
+function myFunction() {
+  document.getElementById("button").click();
+}
+
+function outputMessage() {
+  var d = new Date();
+  document.getElementById("message").innerHTML= " Time:" +d.getTime();
+}
+</script>
+<body onload="setTimeout(myFunction, 3000)">
+<input type="button" id="buttion" value="click by script" onclick="outputMessage()"/> 
+  <p id="message"> </p>
+</body>
+</html>
