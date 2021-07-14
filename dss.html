@@ -9,6 +9,18 @@
 function myFunction() {
   document.getElementById("log").innerHTML = window.location.search;
   document.getElementById("dss").innerHTML = "You have clicked the button " + localStorage.clickcount + " time(s).";
+    // var search= "?dss=clear"
+  var search= window.location.search;
+  const urlParams = new URLSearchParams(search);
+  const page_type = urlParams.get('dss')
+  console.log(page_type);
+  if (page_type == "clear") {
+    console.log("localStorage.clear");
+    localStorage.clear();
+  } else {
+    console.log("localStorage." + page_type);
+    localStorage.dss=page_type
+  }
 }
 </script>
 <body onload="myFunction()">
