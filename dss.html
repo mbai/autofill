@@ -11,7 +11,7 @@ function myFunction() {
   document.getElementById("dss").innerHTML = "You have clicked the button " + localStorage.clickcount + " time(s).";
 }
 </script>
-<body>
+<body onload="myFunction()">
   <button onclick="myFunction()">Try it</button>
 <p id= "log" />
 <p id="dss" />
