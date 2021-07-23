@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+
+</head>
+<body>
+<p id="ct" onclick="myFunction()">Click me to query prefers-color-scheme.</p>
+  <script>
+    function myFunction() {
+    document.getElementById("ct").innerHTML = window.matchMedia('(prefers-color-scheme: dark)').media;
+    }
+  </script>
+  
+</body>
+</html>
