@@ -10,7 +10,7 @@
 <p id="ct" onclick="myFunction()">Click me to query prefers-color-scheme.</p>
   <script>
     function myFunction() {
-    document.getElementById("ct").innerHTML = window.matchMedia('(prefers-color-scheme: dark)').media;
+    document.getElementById("ct").innerHTML = "Dark:" +window.matchMedia('(prefers-color-scheme: dark)').matches;
     }
   </script>
   
