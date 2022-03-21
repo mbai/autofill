@@ -19,7 +19,8 @@
   });
 }
 
-async function f1() {
+  const button = document.querySelector('button');
+  button.addEventListener('click', async function f1() {
     if ('IdleDetector' in window) {
        console.log('support IdleDetector')
        const state = await IdleDetector.requestPermission();
@@ -32,10 +33,7 @@ async function f1() {
     } else {
          console.log('Not support IdleDetector')
     }
-}
-
-  const button = document.querySelector('button');
-  button.addEventListener('click', async f1());
+});
 
   </script>
 </body>
