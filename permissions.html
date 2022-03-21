@@ -3,16 +3,37 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>Permission</title>
+  <title>JS Bin</title>
 </head>
-  <script>
-    if ('IdleDetector' in window) {
-   console.log('support IdleDetector')
-} else {
-     console.log('Not support IdleDetector')
-}
-  </script>
-<body>
 
+<body>
+  <script>
+    
+    function resolveAfter2Seconds(x) {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      resolve(x);
+    }, 2000);
+  });
+}
+
+async function f1() {
+    if ('IdleDetector' in window) {
+       console.log('support IdleDetector')
+       const state = await IdleDetector.requestPermission();
+        if (state !== 'granted') {
+          // Need to request permission first.
+          console.log('Idle detection permission not granted.');
+        } else {
+          console.log('Idle detection permission granted.');
+        }
+    } else {
+         console.log('Not support IdleDetector')
+    }
+}
+
+f1();
+
+  </script>
 </body>
 </html>
