@@ -7,6 +7,8 @@
 </head>
 
 <body>
+  
+  <button>Request idle detector</button>
   <script>
     
     function resolveAfter2Seconds(x) {
@@ -32,7 +34,8 @@ async function f1() {
     }
 }
 
-f1();
+  const button = document.querySelector('button');
+  button.addEventListener('click', f1());
 
   </script>
 </body>
