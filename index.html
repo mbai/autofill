@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>App</title>
+    <style>
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        display: flex;
+        flex-direction: column;
+      }
+      body.dark {
+        background-color: #222;
+        color: #888;
+      }
+      header {
+        padding: 10px;
+        background-color: #2288ff;
+        color: #fff;
+        font-size: 1.5em;
+        display: flex;
+        align-items: center;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        z-index: 1;
+      }
+      header > * {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        padding: 0 10px;
+      }
+      body.dark header {
+        background-color: #333;
+        color: #bbb;
+      }
+      main {
+        flex: 1;
+        overflow: auto;
+        padding: 10px;
+      }
+      .spacer {
+        flex: 1;
+      }
+      .icon-dark-mode {
+        font-size: 0.8em;
+      }
+      .icon-dark-mode::after {
+        content: 'DARK';
+      }
+      body.dark .icon-dark-mode::after {
+        content: 'LIGHT';
+      }
+      footer {
+        padding: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        text-align: center;
+        font-size: 0.8em;
+      }
+      body.dark footer {
+        background-color: #333;
+        color: #bbb;
+      }
+      button {
+        font-size: 1.5em;
+        width: 100%;
+        padding: 10px;
+        background-color: #2288ff;
+        color: #fff;
+        appearance: none;
+        border: none;
+        outline: none;
+        border-radius: 5px;
+        display: block;
+        text-transform: uppercase;
+      }
+    </style>
+    <script>
+      window.addEventListener('load', () => {
+        const elHeader = document.querySelector('header');
+        elHeader?.addEventListener('click', () => {
+          document.body.classList.toggle('dark');
+        });
+
+        const btnUnwrap = document.querySelector('button#unwrap');
+        btnUnwrap?.addEventListener('click', () => {
+          console.log('HALLO');
+          const elMain = document.querySelector('main');
+          while (elMain.firstChild) document.body.append(elMain.firstChild);
+          elMain.remove();
+          const footer = document.querySelector('footer');
+          if (footer) {
+            footer.innerHTML = `<strong>Done! Restart this app to reset.</strong>`;
+          }
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <header>
+      <div class="title">My App</div>
+      <div class="spacer"></div>
+      <div class="icon-dark-mode"></div>
+    </header>
+    <main>
+      <div style="text-align: center; padding: 10px">
+        <strong>Scroll it!</strong>
+      </div>
+      Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+      eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+      voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+      clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
+      amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+      nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
+      diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+      Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
+      sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+      diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
+      erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
+      rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
+      dolor sit amet. Duis autem vel eum iriure dolor in hendrerit in vulputate
+      velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis
+      at vero eros et accumsan et iusto odio dignissim qui blandit praesent
+      luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem
+      ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
+      euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi
+      enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit
+      lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum
+      iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel
+      illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto
+      odio dignissim qui blandit praesent luptatum zzril delenit augue duis
+      dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis
+      eleifend option congue nihil imperdiet doming id quod mazim placerat facer
+      possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+      sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam
+      erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
+      ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+      Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse
+      molestie consequat, vel illum dolore eu feugiat nulla facilisis. At vero
+      eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
+      gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem
+      ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+      tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+      voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+      clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
+      amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, At accusam
+      aliquyam diam diam dolore dolores duo eirmod eos erat, et nonumy sed
+      tempor et et invidunt justo labore Stet clita ea et gubergren, kasd magna
+      no rebum. sanctus sea sed takimata ut vero voluptua. est Lorem ipsum dolor
+      sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+      diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
+      erat. Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt
+      ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
+      accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no
+      sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
+      amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt
+      ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
+      accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no
+      sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
+      amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt
+      ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
+      accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no
+      sea takimata sanctus. Lorem ipsum dolor sit amet, consetetur sadipscing
+      elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
+      aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
+      dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus
+      est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
+      sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+      dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et
+      justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+      sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
+      consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+      labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
+      accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no
+      sea takimata sanctus est Lorem ipsum dolor sit amet. Duis autem vel eum
+      iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel
+      illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto
+      odio dignissim qui blandit praesent luptatum zzril delenit augue duis
+      dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer
+      adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore
+      magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud
+      exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo
+      consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit
+      esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at
+      vero eros et accumsan et iusto odio dignissim qui blandit praesent
+      luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam
+      liber tempor cum soluta nobis eleifend option congue nihil imperdiet
+      doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit
+      amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
+      tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad
+      minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis
+      nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor
+      in hendrerit in vulputate velit esse molestie consequat, vel illum dolore
+      eu feugiat nulla facilisis. At vero eos et accusam et justo duo dolores et
+      ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
+      ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing
+      elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
+      aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
+      dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus
+      est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
+      sadipscing elitr, At accusam aliquyam diam diam dolore dolores duo eirmod
+      eos erat, et nonumy sed tempor et et invidunt justo labore Stet clita ea
+      et gubergren, kasd magna no rebum. sanctus sea sed takimata ut vero
+      voluptua. est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
+      consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+      labore et dolore magna aliquyam erat. Consetetur sadipscing elitr, sed
+      diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
+      erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
+      rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
+      dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+      sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
+      erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
+      rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
+      dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+      sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
+      erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
+      rebum. Stet clita kasd gubergren, no sea takimata sanctus. Lorem ipsum
+      dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+      invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
+      vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
+      gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem
+      ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+      tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+      voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+      clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
+      amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+      nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
+      diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+      Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
+      sit amet. Duis autem vel eum iriure dolor in hendrerit in vulputate velit
+      esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at
+      vero eros et accumsan et iusto odio dignissim qui blandit praesent
+      luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem
+      ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
+      euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi
+      enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit
+      lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum
+      iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel
+      illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto
+      odio dignissim qui blandit praesent luptatum zzril delenit augue duis
+      dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis
+      eleifend option congue nihil imperdiet doming id quod mazim placerat facer
+      possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+      sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam
+      erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
+      ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+      Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse
+      molestie consequat, vel illum dolore eu feugiat nulla facilisis. At vero
+      eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
+      gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem
+      ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+      tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+      voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+      clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
+      amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, At accusam
+      aliquyam diam diam dolore dolores duo eirmod eos erat, et nonumy sed
+      tempor et et invidunt justo labore Stet clita ea et gubergren, kasd magna
+      no rebum. sanctus sea sed takimata ut vero voluptua. est Lorem ipsum dolor
+      sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+      diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
+      erat. Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt
+      ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
+      accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no
+      sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
+      amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt
+      ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
+      accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no
+      sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
+      amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt
+      ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
+      accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no
+      sea takimata sanctus. Lorem ipsum dolor sit amet, consetetur sadipscing
+      elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
+      aliquyam erat, sed diam voluptua.
+    </main>
+    <footer>
+      <strong>
+        Unwrap the main element and insert the text into the body element. You
+        will see that the scrollbar only works for the body element. Click the
+        button below to do it now. Or just edit the index.html by just removing
+        the main tag.
+      </strong>
+      <div style="margin-top: 10px">
+        <button id="unwrap">Unwrap</button>
+      </div>
+    </footer>
+  </body>
+</html>
